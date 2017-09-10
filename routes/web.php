@@ -4,6 +4,7 @@ Auth::routes();
 Route::get('/qui_sommes_nous','StaticPagesController@qui_sommes_nous');
 // home page and deposer projet routing
 Route::get('/','HomeController@index')->name('home');
+// translate route
 Route::get('language/{lang}', 'HomeController@language')->where('lang', '[A-Za-z_-]+');
 Route::get('/deposer','DeposerProjetController@index');
 Route::post('/deposer','DeposerProjetController@store');
