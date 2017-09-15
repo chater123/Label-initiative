@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Oxygen:700|Source+Sans+Pro:300);
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Roboto+Slab');
+@import url('https://fonts.googleapis.com/css?family=Amiri|Cairo|Rakkas|Scheherazade');
 body{
     margin: 0;
     padding: 0;
@@ -18,8 +19,7 @@ body{
 }
 
 
-.slider_description{
-   
+.slider_description{   
     font-size: 1.5vw;
     position: absolute;
     top:3em;
@@ -121,6 +121,7 @@ canvas {
     background: url("../images/footer_background.png")  no-repeat ;
     background-size:cover;
     width:100%;
+    padding:2em 0;
 }
 .footer_list{
     list-style: none;
@@ -156,11 +157,153 @@ canvas {
 
   }
   .main-title{
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family:'Source Sans Pro', sans-serif;
     font-size: 1.7em;
-    padding:20px;
+    padding:1.5em;
+    font-weight: 700;
     text-align: center;
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
   }
 
+
+b{
+    color:#660099;
+}
+a:lang(ar){
+        font-family: 'Cairo', "Tamil MN", serif;
+        font-size: 120%;
+        font-weight: 600;
+}
+.ui.orange.button:lang(ar){
+        font-family: 'Cairo', "Tamil MN", serif;
+}
+p:lang(ar){
+    font-family: 'Cairo', "Tamil MN", serif;
+    color:black;
+}
+.seq .seq-title h2:lang(ar){
+    font-family: 'Cairo', "Tamil MN", serif;
+    font-size: 1.4em;
+    text-align:right;
+}
+b:lang(ar){
+     font-family: 'Cairo', "Tamil MN", serif;
+     font-size: 120%;
+     color:#660099;
+     
+}
+h2:lang(ar){
+    font-family: 'Cairo', "Tamil MN", serif;
+    font-size: 1.4em; 
+    color:#660099;
+}
+.ui.orange.header:lang(ar){
+    font-family: 'Cairo', "Tamil MN", serif;
+     font-size: 120%;
+     color:#660099;
+}
+ul li:lang(ar){
+       font-family: 'Cairo', "Tamil MN", serif;
+       font-size: 110%;
+       text-align: right;
+}
+h2.ui.header :lang(ar){
+    font-family: 'Cairo', "Tamil MN", serif;
+    font-size: 110%;
+    text-align: right;
+}
+h1.ui.header{
+    font-family: 'Cairo', "Tamil MN", serif;
+    text-align: center;
+    padding:20px;
+}
+.el-dropdown-menu__item {
+    width:100% !important;
+    }
+    /*all projet*/
+    .badge {
+    float: right;
+    }
+
+.ais-powered-by {
+  float: right;
+  line-height: 26px;
+}
+
+.ais-powered-by  svg {
+    vertical-align: bottom;
+  }
+  .ais-stats {
+  line-height: 36px;
+}
+/* Price Range */
+
+.ais-price-range__input--from,
+.ais-price-range__input--to {
+  width: 65px;
+  display: inline;
+  border:0;
+  border-radius:4px;
+}
+
+.ais-price-range__input--from:focus,
+.ais-price-range__input--to:focus{
+-webkit-box-shadow: orange;
+        box-shadow: orange;
+         border:0;
+}
+
+/* Clear Search */
+
+.ais-clear--disabled {
+  display: none;
+}
+
+.ais-input{
+   display:inline;
+   width:100%;
+   border:0;
+   font-size: 1.2rem;
+   font-family: "Open Sans";
+border-radius:4px;
+    padding: 10px;
+}
+.ais-input:focus{
+    border:0;
+-webkit-box-shadow: orange;
+        box-shadow: orange;
+      border:0;
+ border-radius:4px;
+}
+
+.ais-sort-by-selector{
+    max-width: 30%;
+    font-size: 1.2rem;
+    display:inline;
+    border:0;
+    border-radius:4px;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+    opacity: .8;
+}
+.ais-results-per-page-selector{
+    max-width: 15%;
+    font-size: 1.2rem;
+    border:0;
+    border-radius:4px;
+    cursor: pointer;
+    opacity: .8;
+    
+}
+
+
+.ais-sort-by-selector:focus{
+   border:0;
+    box-shadow: .1px -.1px 2px 1px #ea9d35;
+        
+}
+.ais-results-per-page-selector:focus{
+  border:0;
+   box-shadow: .1px -.1px 2px 1px #ea9d35;
+}

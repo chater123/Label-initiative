@@ -1,7 +1,7 @@
-<div class="row" id="app">
+<div class="row">
     <div class="eight wide column">
         <div class="ui  segment">
-            <div id="app">
+            <div>
                 @if (Auth::check())
                 @can('Like Projet')
                 <div class="inverted ui fluid button ">
@@ -9,7 +9,8 @@
                     :projet={{ $projet->id }}
                     :favorited={{ Auth::user()->hasFavorited($projet) ? 'true' : 'false' }}
                     ></favorite>
-                </div>
+                </div> 
+                @lang('lang.like_message')
                 @endcan
                 @endif
                 
@@ -29,7 +30,7 @@
                 @foreach($projet->photos as $photo)
                 <el-carousel-item>
                 <center>
-                <img src="{{asset('storage/'.$photo->filename)}}" class="ui medium  image" >
+               <img src="{{Cloudder::show($photo->filename)}}">
                 </center>
                 </el-carousel-item>
                 @endforeach
@@ -118,6 +119,5 @@
                 </center>
             </div>
         </div>
-    </div>
-    
+    </div> 
 </div>

@@ -77,13 +77,14 @@ class EspacePorteurProjetController extends Controller
 
     public function myaccount()
     {
+        $user= auth()->user();   
         return view('espace_porteur.edit_account',compact('user'));
     }
 
     public function update_myaccount($id,Request $request)
     {
     	$user = User::updateOrCreate(['id'=>$id],$request->all());
-    	return redirect()->route('projet_news')->with('flash_message','Account successfully updated');
+        return back();
     }
 
     public function destroy($id)

@@ -2,25 +2,24 @@
     <div class="ui center aligned container">
         <div class="ui stackable grid">
             <div class="five wide column">
-                <h4 class="ui orange header" id="footer_titles">LABEL-INITIATIVE</h4>
+                <h4 class="ui orange header" id="footer_titles">@lang('lang.name_of_app')</h4>
                 <div class="ui inverted link list" id="footer_items">
-                    <a href="#" class="item">Qui sommes-nous</a>
-                    <a href="#" class="item">Espace Presse</a>
-                    <a href="#" class="item">Contact</a>
-                    <a href="#" class="item">Réclamation</a>
+                    <a href="/qui_sommes_nous" class="item">@lang('lang.header_us')</a>
+                    <a href="#" class="item">@lang('lang.footer_presse_space')</a>
+                    <a href="/contact" class="item">@lang('lang.footer_contact')</a>
+                    <a href="" class="item">@lang('lang.footer_reclamation')</a>
                 </div>
             </div>
             <div class="five wide column">
-                <h4 class="ui orange header" id="footer_titles">SAVOIR PLUS</h4>
+                <h4 class="ui orange header" id="footer_titles">@lang('lang.learn_more')</h4>
                 <div class="ui inverted link list" id="footer_items">
-                    <a href="#" class="item">Foire aux questions</a>
-                    <a href="#" class="item">L'équipe</a>
-                    <a href="#" class="item">Le guide du porteur de projet</a>
-                    <a href="#" class="item">Investissement participatif</a>
+                    <a href="/team" class="item">@lang('lang.footer_team')</a>
+                    <a href="#" class="item">@lang('lang.footer_guide')</a>
+                    <a href="#" class="item">@lang('lang.footer_invi_particip')</a>
                 </div>
             </div>
             <div class="six wide column">
-                <h4 class="ui orange header" id="footer_titles">SUIVEZ NOUS SUR</h4>
+                <h4 class="ui orange header" id="footer_titles">@lang('lang.follow_us')</h4>
                 <ul class="footer_list">
                     <li>
                         <a href="https://www.facebook.com" target="_blank"><img src="{{asset("images/if_facebook_313103.png")}}" alt="facebook" class="footer_img"></a>

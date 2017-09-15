@@ -1,3 +1,4 @@
+@include('layouts.errors')
 <div class="row">
     <div class="nine wide column">
         {{ Form::model($projet, array('route' => array('projet.update', $projet->id), 'method' => 'PUT','files' => true)) }}
@@ -56,22 +57,26 @@
                 <input type="file" name="photos[]" multiple  required />
                 {!! Form::submit('upload', ['class' => 'ui blue button ']) !!}
             </div>
-        </div>
-        {{ Form::close() }}
+            {{ Form::close() }}
+        </div> 
+       
         <div class=" field">
             <div class="ui segment">
                 <h4>Photos de projet</h4>
                 <div class="ui three cards">
                     @foreach($projet->photos as $photo)
-                    <div class="card">
+                    <div class="card" style="max-width: 150px;">
                         <div class="content">
-                            {!! Form::open(['method' => 'DELETE', 'route' => ['deletephoto', $photo->id] ]) !!}
-                            <img src="{{asset('storage/'.$photo->filename)}}" class="ui small image" >
-                        </div>
-                        {!! Form::submit('DELETE', ['class' => 'ui red button ']) !!}
+                        {!! Form::open(['method' => 'DELETE', 'route' => ['deletephoto', $photo->id] ]) !!}
+                    
+                             <img src="{{Cloudder::show($photo->filename)}}">
+
+                         {!! Form::submit('DELETE', ['class' => 'ui  fluid red button ']) !!}
                         {!! Form::close() !!}
+                        </div>
+                      
                     </div>
-                    {!! Form::close() !!}
+                   
                     @endforeach
                 </div>
             </div>

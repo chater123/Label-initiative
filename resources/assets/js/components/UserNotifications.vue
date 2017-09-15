@@ -3,18 +3,17 @@
 <el-badge :value="numberOfNotifications" :max="99" class="item" v-if="numberOfNotifications" >
 
 <el-dropdown   >
-      <span class="el-dropdown-link" @click="toggleMenu">
+      <span class="el-dropdown-link">
         <i class="large alarm  icon"></i>
       </span>
 
-      <el-dropdown-menu slot="dropdown"  :styles="initial_drop_down" 
-    v-bind:style="{ display: activeDisplay}">
+      <el-dropdown-menu slot="dropdown">
 
         <el-dropdown-item  v-for="notification in notifications" :key="notification.id">
      	 <a :href="notification.data.link"
                    v-text="notification.data.message"
-                   @click="markAsRead(notification)"
-                ></a>
+                   @click="markAsRead(notification)"       
+                   ></a>
         </el-dropdown-item>
       </el-dropdown-menu>
  </el-dropdown>

@@ -2,6 +2,8 @@
 Auth::routes();
 //static pages routing
 Route::get('/qui_sommes_nous','StaticPagesController@qui_sommes_nous');
+Route::get('/contact','StaticPagesController@contact');
+Route::get('/team','StaticPagesController@team');
 // home page and deposer projet routing
 Route::get('/','HomeController@index')->name('home');
 // translate route
@@ -16,6 +18,7 @@ Route::get('/espace_partenaire','EspacePartenaireController@index')->name('all_p
 Route::get('/espace_partenaire/fav_projets','EspacePartenaireController@fav_projets');
 Route::get('/espace_partenaire/projets/{categorie_name}','EspacePartenaireController@categorie');
 // espace porteur de projet routing
+
 Route::get('/espace_porteur/myaccount','EspacePorteurProjetController@myaccount');
 Route::put('/espace_porteur/myaccount/{id}','EspacePorteurProjetController@update_myaccount')->name('update_myaccount_porteur');
 Route::get('/espace_porteur/chat','EspacePorteurProjetController@chat');
@@ -27,7 +30,7 @@ Route::Delete('/espace_porteur/photonouvelle/{id}','EspacePorteurProjetControlle
 //projet routing
 Route::post('favorite/{projet}','ProjetController@favoriteProjet');
 Route::post('unfavorite/{projet}','ProjetController@unFavoriteProjet');
-Route::put('/projet/{id}','ProjetController@updatephotos')->name('updatephotos');
+Route::put('/projet/{id}/photo','ProjetController@updatephotos')->name('updatephotos');
 Route::Delete('/projet/photo/{id}','ProjetController@destroyphoto')->name('deletephoto');
 Route::resource('projet','ProjetController');
 Route::resource('users', 'UserController');

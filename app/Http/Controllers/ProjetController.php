@@ -8,6 +8,7 @@ use App\ProjetsPhoto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use JD\Cloudder\Facades\Cloudder;
 
 class ProjetController extends Controller
 {
@@ -30,10 +31,11 @@ class ProjetController extends Controller
     {
         $projet = Projet::create($request->all());
         foreach($request->photos as $photo) {
-            $filename = $photo->store('photos','public');
+            Cloudder::upload($photo);
+            $photo_id = Cloudder::getPublicId();
             ProjetsPhoto::create([
                 'projet_id' => $projet->id,
-                'filename' => $filename
+                'filename' => $photo_id
             ]);
         }
         //Display a successful message upon save
@@ -52,19 +54,7 @@ class ProjetController extends Controller
         return view ('projets.edit', compact('projet'));
     }
 
-    public function updatephotos(UploadProjetRequest $request, $id)
-    {
-        $projet = Projet::findOrFail($id);
-        foreach($request->photos as $photo) {
-            $filename = $photo->store('photos','public');
-            ProjetsPhoto::create([
-                'projet_id' => $id,
-                'filename' => $filename
-            ]);
-        }
-        //Display a successful message upon save
-        return redirect()->route('projet.edit',$id)->with('flash_message','Projet Updated');
-    }
+
 
     public function update(Request $request, $id)
     {
@@ -73,8 +63,8 @@ class ProjetController extends Controller
             'description' =>'required',
             'montant_estime'=>'required',
             'categorie' => 'required']);
-
-        $projet = Projet::findOrFail($id);
+            
+            $projet = Projet::findOrFail($id);
 
         $projet->title = $request->input('title');
         $projet->description = $request->input('description');
@@ -85,17 +75,26 @@ class ProjetController extends Controller
         return redirect()->route('projet.index')->with('flash_message','Projet,'.$projet->title.'Updated');
     }
 
+    public function updatephotos(UploadProjetRequest $request, $id)
+    {
+        $projet = Projet::findOrFail($id);
+        foreach($request->photos as $photo) {
+             Cloudder::upload($photo);
+             $photo_id = Cloudder::getPublicId();
+            ProjetsPhoto::create([
+                'projet_id' => $id,
+                'filename' => $photo_id
+            ]);
+        }
+        //Display a successful message upon save
+return back();
+    }
     public function destroy($id)
     {    
         $projet = Projet::findOrFail($id);
         $photos = $projet->photos;
         foreach ($photos as $photo) {
-            $file = storage_path('/app/public/').$photo->filename;
-            if($file) {
-                if(File::isFile($file)){
-                    \File::delete($file);
-                }
-            }
+        Cloudder::destroyImage($photo->filename);
         }
         $projet->delete();
 
@@ -106,14 +105,11 @@ class ProjetController extends Controller
     {
         $photo = ProjetsPhoto::findOrFail($id);
         $projet_id=$photo->projet->id;
-        $file = storage_path('/app/public/').$photo->filename;
-        if ($file) {
-            if(File::isFile($file)){
-                \File::delete($file);
-            }
-        }
+
+        Cloudder::destroyImage($photo->filename);
+
         $photo->delete();
-        return redirect()->route('projet.edit',$projet_id)->with('flash_message','photo Deleted');
+        return back();
     }
 
 

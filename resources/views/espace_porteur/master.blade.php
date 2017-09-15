@@ -6,19 +6,19 @@
 			<div class="ui compact vertical labeled icon menu">
 				<a class="item" href="/espace_porteur/edit">
 					<i class="travel icon orange"></i>
-					Mon projet
+					@lang('lang.my_pr')
 				</a>
 				<a class="item" href="/espace_porteur/myaccount">
 					<i class="folder icon orange"></i>
-					Mon compte
+					@lang('lang.my_acc')
 				</a>
 				<a class="item" href="/espace_porteur">
 					<i class="newspaper icon orange"></i>
-					Actualité du projet
+					@lang('lang.projet_news')
 				</a>
 				<a class="item" href="/espace_porteur/chat">
 					<i class="mail outline icon orange"></i>
-					Chat Avec Mes partenaires
+					@lang('lang.chat_with_partners')
 				</a>
 			</div>
 		</div>
@@ -26,7 +26,7 @@
 			<div class="row" id="menu_bar">
 				<a class="ui orange button" href="/espace_porteur/createnouvelle">
 				<i class="plus icon"></i>
-				Publier une nouvelle
+				@lang('lang.add_news')
 				</a>
 			</div>
 			

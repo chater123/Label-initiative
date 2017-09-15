@@ -4,8 +4,6 @@ import 'element-ui/lib/theme-default/index.css'
 import VueResource from 'vue-resource';
 Vue.use(ElementUI)
 
-Vue.use(VueResource);
-
  require('./bootstrap');
 
 new Vue({

@@ -26,10 +26,10 @@ body,
 html,
 .seq {
   /* Uncomment to make the theme full-screen */
-  /* width: 100% !important; */
-  /* max-width: 100% !important; */
-  /* height: 100% !important; */
-  /* max-height: 100% !important; */
+ /*  width: 100% !important; 
+   max-width: 100% !important; 
+   height: 100% !important; 
+   max-height: 100% !important; */
 }
 .seq {
   position: relative;
@@ -237,9 +237,8 @@ html,
 
 .seq .seq-title h2 {
   padding: .2em 1%;
-  font-family: 'Oxygen', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   color: white;
-  background-color: #FF6600;
   float: left;
 }
 
@@ -362,7 +361,7 @@ html,
     margin: 0;
     opacity: 0;
     text-align: left;
-    font-size: 1.3em;
+    font-size: 1.7em;
     -webkit-transition-duration: .3s;
     transition-duration: .3s;
     -webkit-transition-properties: transform, opacity;
@@ -371,13 +370,14 @@ html,
 
   .seq .seq-title h2 {
     margin-bottom: .4em;
-    padding: .2em .6em;
-    font-family: 'Oxygen', sans-serif;
+    padding: .7em .6em;
+    font-family: 'Source Sans Pro', sans-serif;
     color: white;
+    font-weight: 900;
     background: rgba(52,1,0,.6);
-    -webkit-transform: translate3d(-120px, 0, 0);
-    -ms-transform: translate3d(-120px, 0, 0);
-    transform: translate3d(-120px, 0, 0);
+    -webkit-transform: translate3d(-120px, 80px, 0);
+    -ms-transform: translate3d(-120px, 80 px, 0);
+    transform: translate3d(-120px, 80px, 0);
   }
 
   .seq .seq-title h3 {

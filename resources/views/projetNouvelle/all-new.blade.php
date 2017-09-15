@@ -14,10 +14,13 @@
                     {{$nouvelle->description}}
                 </div>
             </div>
+            <div class="extra">
             {!! Form::open(['method' => 'DELETE', 'route' => ['deletephoto_nouvelle', $nouvelle->id] ]) !!}
             {!! Form::submit('
             DELETE', ['class' => 'ui red button ']) !!}
             {!! Form::close() !!}
+            </div>
+            
         </div>
         @endforeach
     </div>

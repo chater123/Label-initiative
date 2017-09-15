@@ -10,25 +10,37 @@
         <el-carousel :interval="4000">
         @foreach($evenement->photos as $photo)
         <el-carousel-item>
-        <img src="{{asset('storage/'.$photo->filename)}}" class="ui fluid image">
+          <center>
+            <img src="{{Cloudder::show($photo->filename)}}">
+          </center>
         </el-carousel-item>
         @endforeach
         </el-carousel>
         </template>
       </div>
-      @role('Admin')
-      {!! Form::open(['method' => 'DELETE', 'route' => ['evenement.destroy', $evenement->id] ]) !!}
-      <a href="{{ url()->previous() }}" class="ui orange fluid  button">
-      <i class="backward icon"></i>Back</a>
-      <br>
-      <a href="{{ route('evenement.edit', $evenement->id) }}" class="ui green button" role="button">
-      <i class="edit icon"></i>Edit</a>
-      {!! Form::submit('Delete', ['class' => 'ui red button ']) !!}
-      {!! Form::close() !!}
-      @endrole
+      <a href="{{ url()->previous() }}" class="ui orange button">
+        <i class="backward icon"></i>
+        Back
+      </a>
+           <div class="ui divider">
+    
+         </div>
+        @role('Admin')
+            <div class="ui buttons">
+                <a href="{{ route('evenement.edit', $evenement->id) }}" class="ui yellow button" role="button">
+                    <i class="edit icon"></i>
+                        Edit
+                </a>
+                <div class="or"></div>
+                     {!! Form::open(['method' => 'DELETE', 'route' => ['evenement.destroy', $evenement->id] ]) !!}
+                        {!! Form::submit('Delete', ['class' => 'ui red button ']) !!}
+                    {!! Form::close() !!}
+        
+            </div>
+        @endrole
+        </div>
+   
     </div>
   </div>
-  
-  
-</div>
+
 @endsection

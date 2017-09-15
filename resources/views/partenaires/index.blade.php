@@ -1,6 +1,6 @@
 @extends('layouts.master_1')
 @section('content')
-<div class="row" style="background-color:rgba(214, 212, 212,.2);">
+<div class="row" style="background-color:rgba(214, 212, 212,.2);padding:6em 0; ">
   <div class="nine wide  column">
     <div class="ui segment">
       <div class="ui container three cards">
@@ -15,6 +15,24 @@
           <div class="meta">
             {{$partenaire->created_at->diffForHumans()}}
           </div>
+        </div>
+        <div class="extra content">
+               <div class="ui divider">
+    
+         </div>
+        @role('Admin')
+            <div class="ui buttons">
+                <a href="{{ route('partenaire.edit', $partenaire->id) }}" class="ui yellow button" role="button">
+                    <i class="edit icon"></i>
+                        Edit
+                </a>
+                <div class="or"></div>
+                {!! Form::open(['method' => 'DELETE', 'route' => ['partenaire.destroy', $partenaire->id] ]) !!}
+                    {!! Form::submit('Delete', ['class' => 'ui red button ']) !!}
+                {!! Form::close() !!}
+        
+            </div>
+        @endrole
         </div>
       </div>
       @endforeach

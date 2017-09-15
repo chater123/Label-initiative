@@ -1,5 +1,6 @@
 <?php
    return [
+   //home page
       'slider_one_message' => ' Notre objectif est de vous accompagner <br>dans la réussite de votre projet  <br>',
       
       'slider_two_message' => ' Label Initiative organise  un festival <br>
@@ -15,9 +16,7 @@
            trouver des partenaires et gagner en visibilité ? <br>',
 
         'name_of_app' => 'LABEL INITIATIVE',
-
         'support_message' => 'vous accompagne et facilite la réalisation de vos projets.',
-
         'deposer_projet' => 'Déposer mon projet',
         'decouvrir_projet' => 'DÉCOUVRIR LES PROJETS',
         'chiffre_cle' => 'DES CHIFFRES CLÉS',
@@ -27,6 +26,52 @@
         'spons' =>'SPONSORS PERMANENTS',
         'video_l' => 'VIDÉOTHÈQUE',
         'all_projets'=> 'Tous Les Projets',
+        'learn_more' => 'SAVOIR PLUS',
+        // header
+        'header_us' =>'Qui Sommes-nous?',
+        'header_projets' => 'Nos Projets',
+        'header_partners' => 'Nos Partenaires',
+        'header_events' => 'Nos Événements',
+        'header_connect' => 'Se connecter',
+        'header_admin' => 'Admin',
+        'header_logout' => 'Se deconnecter',
+        'header_myspace' => 'Mon espace',
+        // espace porteur
+        'my_pr' => 'Mon Projet',
+        'my_acc' => 'Mon Compte',
+        'projet_news' => 'Actualité du projet',
+        'chat_with_partners' => 'Chat Avec Mes partenaires',
+        // espace partenaire
+        'add_news' => 'ajouter des  Nouvelles sur le projet',
+        'projet_followed' => 'les projets suivis',
+        'edit_my_acc' => 'Modifier mon compte',
+        'chat_with_porteur' => 'Chat Avec Mes Porteurs De Projet',
+        // 
+        'welcome_message' => 'Soyez les bienvenus !!',
+        'email' => 'e-mail',
+        'password' => 'mot de passe',
+        'password_repeat' => 'Confirmation de mot de passe',
+        'remember_me' => 'Se souvenir de moi',
+        'forgot_pwd' => 'Vous avez oublié votre mot de passe?',
+        'register_message' => 'vous n\'avez pas encore de compte, créez-en un maintenant pour démarrer votre projet ou pour aider les autres et partager vos connaissances pour élever le pays tout entier.',
+        'devenir_part' => 'devenir partenaire',
+        'devenir_port' => 'devenir porteur de projet',
+        'name' => 'votre nom',
+        'generale_condition' => 'J\'accepte les conditions générales d’utilisation de la plateforme',
+        'obligation_filling_message' => 'Tout les champs avec * doivent être obligatoirement remplis',
+        'picture_of_event' => 'photo de la nouvelle',
+        'title' => 'titre',
+        'description' => 'description',
+        'register' => 'S\'inscrire',
+        'footer_contact' => 'Contact',
+        'footer_presse_space' => 'Espace de presse',
+        'footer_reclamation' => 'Réclamation',
+        'footer_team' => 'L\'équipe',
+        'footer_guide' => 'Guide De Porteur De Projet',
+        'footer_invi_particip' => 'Investissement Participatif',
+        'follow_us' => 'SUIVEZ NOUS SUR',
+        'access_denied' => 'ACCÈS REFUSÉ',
+        'like_message' => 'En cliquant sur le cœur avant tout, vous recevrez les nouvelles liées à ce projet et sera en mesure de chater avec le propriétaire du projet à partir de votre espace ',
 
 
    ];

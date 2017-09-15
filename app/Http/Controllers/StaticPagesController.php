@@ -8,5 +8,12 @@ class StaticPagesController extends Controller
 	{
 		return view('static_pages.qui_sommes_nous');
 	}
-  
+	public function contact()
+	{
+		return view('static_pages.contact');
+	}
+  	public function team()
+	{
+		return view('static_pages.equipe');
+	}
 }

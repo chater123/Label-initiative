@@ -7,6 +7,7 @@ use App\Http\Requests\UploadEvenementRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use JD\Cloudder\Facades\Cloudder;
 
 class EvenementController extends Controller
 {
@@ -29,10 +30,11 @@ class EvenementController extends Controller
     {
         $evenement = Evenement::create($request->all());
         foreach ($request->photos as $photo) {
-            $filename = $photo->store('photos','public');
+            Cloudder::upload($photo);
+            $photo_id = Cloudder::getPublicId();
             EvenementsPhoto::create([
                 'evenement_id' => $evenement->id,
-                'filename' => $filename
+                'filename' => $photo_id
             ]);
         }
 
@@ -56,13 +58,8 @@ class EvenementController extends Controller
         $evenement = Evenement::findOrFail($id);
         $photos = $evenement->photos;
         foreach ($photos as $photo) {
-            $file = storage_path('/app/public/').$photo->filename;
-            if ($file) {
-                if(File::isFile($file)){
-                    \File::delete($file);
-                }
-            }
-        }
+            Cloudder::destroyImage($photo->filename);
+                   }
         $evenement->delete();
         $this->store($request);
         return redirect()->route('evenement.index')->with('flash_message','Evenement,'.$evenement->title.'Updated');
@@ -73,12 +70,7 @@ class EvenementController extends Controller
         $evenement = Evenement::findOrFail($id);
         $photos = $evenement->photos;
         foreach ($photos as $photo) {
-            $file = storage_path('/app/public/').$photo->filename;
-            if ($file) {
-                if(File::isFile($file)){
-                    \File::delete($file);
-                }
-            }
+           Cloudder::destroyImage($photo->filename);
         }
         $evenement->delete();
         return redirect()->route('evenement.index')->with('flash_message','Evenement successfully deleted');  

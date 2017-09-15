@@ -14,10 +14,13 @@
             <tr>
                 <td>{{ $permission->name }}</td>
                 <td>
-                    <a href="{{ URL::to('permissions/'.$permission->id.'/edit') }}" class="ui  left floated  button">Edit</a>
-                    {!! Form::open(['method' => 'DELETE', 'route' => ['permissions.destroy', $permission->id] ]) !!}
-                    {!! Form::submit('Delete', ['class' => 'ui red right floated button']) !!}
-                    {!! Form::close() !!}
+                  <div class="ui small buttons">
+                        <a href="{{ URL::to('permissions/'.$permission->id.'/edit') }}" class="ui yellow button">Edit</a>
+                        <div class="or"></div>
+                        {!! Form::open(['method' => 'DELETE', 'route' => ['permissions.destroy', $permission->id] ]) !!}
+                        {!! Form::submit('Delete', ['class' => 'ui red button']) !!}
+                        {!! Form::close() !!}
+                 </div>
                 </td>
             </tr>
             @endforeach

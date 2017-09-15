@@ -16,10 +16,15 @@
                 <td>{{ $role->name }}</td>
                 <td>{{ str_replace(array('[',']','"'),'', $role->permissions()->pluck('name')) }}</td>
                 <td>
-                    <a href="{{ URL::to('roles/'.$role->id.'/edit') }}" class="ui right floated button" >Edit</a>
-                    {!! Form::open(['method' => 'DELETE', 'route' => ['roles.destroy', $role->id] ]) !!}
-                    {!! Form::submit('Delete', ['class' => 'ui left floated red button']) !!}
-                    {!! Form::close() !!}
+                   <div class="ui small buttons">
+                        <a href="{{ URL::to('roles/'.$role->id.'/edit') }}" class="ui yellow button" >Edit</a>
+                        <div class="or"></div>
+                        {!! Form::open(['method' => 'DELETE', 'route' => ['roles.destroy', $role->id] ]) !!}
+                        {!! Form::submit('Delete', ['class' => 'ui red button']) !!}
+                        {!! Form::close() !!}
+                 </div>
+                    
+                 
                 </td>
             </tr>
             @endforeach

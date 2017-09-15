@@ -54,7 +54,7 @@
       </script>
     </head>
     <body>
-      <div class="ui  stackable centered grid">
+      <div class="ui  stackable centered grid" id="app">
         @include('partials.header_1')
         @role('Admin')
         @include('partials.admin_menu')
@@ -63,8 +63,8 @@
         
         @include('partials.footer_1')
       </div>
+       {{-- <script src="{{ mix('js/user-notifications.js') }}"></script> --}}
       <script src="{{ mix('js/app.js') }}"></script>
-      <script src="{{ mix('js/user-notifications.js') }}"></script>
       <script src="{{asset('js/app_talk.js')}}"></script>
       
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -78,7 +78,7 @@
       ;
       });
       </script>
-      
+
       <script type="text/javascript">
       function copyToClipboard(element) {
       var $temp = $("<input>");
@@ -86,6 +86,8 @@
       $temp.val($(element).text()).select();
       document.execCommand("copy");
       $temp.remove();
-      }</script>
+      }
+      </script>
+      @include('partials.tawk_to')
     </body>
   </html>
