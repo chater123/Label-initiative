@@ -53,8 +53,8 @@ class UsersTableSeeder extends Seeder
             ),
             3 => 
             array (
-                'name' => 'sad',
-                'email' => 'kfjna',
+                'name' => 'youssef chater',
+                'email' => 'youssef@gmail.com',
                 'password' => bcrypt('123456'),
                 'address' => 'toi',
                 'categorie' => 'type2',

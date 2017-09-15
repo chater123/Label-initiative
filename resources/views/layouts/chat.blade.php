@@ -10,11 +10,7 @@
         <link rel="stylesheet" href="{{asset('chat/css/style.css')}}">
     </head>
     <body>
-        <div class="header">
-            <div class="container header-brand">
-                <a href="{{url('/home')}}" class="brand">Talk Message</a>
-            </div>
-        </div>
+        <br>
         <div class="container clearfix body">
             @include('partials.peoplelist')
             

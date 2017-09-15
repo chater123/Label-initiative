@@ -5,6 +5,12 @@ $(document).ready(function () {
         }
     });
 
+    $("#message-data").on("keydown", function(e){
+        if(e.which == 13){
+            $('#talkSendMessage').submit();
+            return false;
+        }
+    });
 
     $('#talkSendMessage').on('submit', function(e) {
         e.preventDefault();
